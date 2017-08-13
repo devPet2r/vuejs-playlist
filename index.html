@@ -1,4 +1,72 @@
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="styles.css" rel="stylesheet" />
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="vue-app">
+    <!-- <button v-on:click="age++">Add a Year</button>
+    <button v-on:click="age--">Subtract a Year</button> -->
+
+    <button v-on:click.once="add(1)">Add a Year</button>
+    <button v-on:click="subtract(1)">Subtract a Year</button>
+
+    <button v-on:dblclick="add(10)">Add a Year</button>
+    <button v-on:dblclick="subtract(10)">Subtract a Year</button>
+
+    <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+    <p><a v-on:click.prevent="click" href="http:wizu.co.kr">wizu</a></p>
+
+
+
+    <h1>Keyboard Event</h1>
+    <p>
+      <label>Name:</label>
+      <input type="text" v-bind:value="name" v-on:keyup.enter="logName" v-model="name">
+      <span>{{ name }}</span>
+    </p>
+    <p>
+      <label>Age :</label>
+      <input type="text" v-bind:value="age" v-on:keyup.enter="logAge" v-model="age">
+      <span>{{ age }}</span>
+    </p>
+
+
+    <p>
+      <h1>CSS Classes</h1>
+      <h2>Example 1</h2>
+      <div v-on:click="available = !available"  v-bind:class="{available : available}">
+        <span>Ryu</span>
+      </div>
+
+
+      <h1>CSS Classes</h1>
+      <h2>Example 2</h2>
+      <button v-on:click="nearby = !nearby">Toggle nearby</button>
+      <button v-on:click="available = !available">Toggle available</button>
+      <div v-bind:class="compClasses">
+        <span>Ryu</span>
+      </div>
+    </p>
+
+  </div>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,6 +75,14 @@
         <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
-
+      <div id="vue-app">
+        <h1>Hi {{ greet('pet2r') }}</h1>
+        <p>Name :  {{ name }} </p>
+        <p>Job :  {{ job }} </p>
+        <input type="text" v-bind:value="job">
+        <a v-bind:href="website">web site</a>
+        <p v-html="websiteTag"> </p>
+      </div>
+      <script src="app.js"></script>
     </body>
-</html>
+</html> -->
